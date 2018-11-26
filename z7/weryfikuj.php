@@ -13,7 +13,7 @@ if($_SESSION['czas']>$date){
     
     }
 
-$_SESSION['username'] = $_POST['user'];
+
  $dbhost="lukhol.net.pl"; $dbuser="28844266_chmura"; $dbpassword="adm123IN!"; $dbname="28844266_chmura";
 $link = mysqli_connect($dbhost, $dbuser, $dbpassword, $dbname);
 // $link = mysqli_connect(localhost, nazwa_usera,hasło_usera, baza_usera); // połączenie z BD – wpisać swoje parametry !!!
@@ -50,6 +50,7 @@ setcookie("logged",$user);
  $query1="insert into `logi` (`datagodzina`,`idu`,`logowanie`) values('$czas','$idu',true) ;";
 # echo $query1;
  mysqli_query($link, $query1); 
+ $_SESSION['username'] = $_POST['user'];
  header('Location: http://lukhol.net.pl/z7/postLog.php');
  exit;
  }
