@@ -15,6 +15,7 @@ if (is_uploaded_file($_FILES['plik']['tmp_name']))
  if(!is_dir("/".$user)){ mkdir($_SERVER['DOCUMENT_ROOT'].$user, 0700);
  echo "utworzono katalog";
  }
+ $plik=str_replace(" ","_", $_FILES['plik']['name']);
  move_uploaded_file($_FILES['plik']['tmp_name'],$_SERVER['DOCUMENT_ROOT'].$user."/".$_FILES['plik']['name']);
  }
  }
